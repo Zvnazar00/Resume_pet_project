@@ -1,0 +1,66 @@
+body {
+    background: url(./photo4.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+}
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+form {
+    background-color: #fff;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+input[type="text"], input[type="password"] {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    width: 96%;
+    font-size: 1rem;
+    color: #333;
+}
+input[type="submit"] {
+    transition: .5s;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(6, 18, 39);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #fff;
+}
+input[type=submit]:hover {
+    background-color: #FB6D3A;
+}
+}
+.form-styles{
+    background-color: white;
+}
+.text-styles{
+    color: white;
+}
+.btn-styles{
+    background-color: darkorange;
+}
+.btn-styles:hover{
+    background-color: gray;
+}
+.btn-styles:focus{
+    background-color: gray;
+}
+

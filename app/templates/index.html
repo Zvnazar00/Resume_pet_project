@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" class="background-styles">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- body of page -->
+    <div class="main_container">
+        <!--main section-->
+        <div class="main_context">
+            <!-- About person -->
+            <div class="person">
+                <h2 class="profession">{{ profession }}</h2>
+                <h1 class="name">{{ name_surname }}</h1>
+                <h4>{{ country }}, {{ city }}</h4>
+                <p class="description">{{ description }}</p>
+            </div>
+            <!-- Projects -->
+            {% if projects %}
+                <div class="projects">
+                    <h3 class="main_title">Project</h3>
+                    <ol class="projects_list">
+                        {% for project in projects %}
+                            {% set project_no_quotes = project.strip("'") %}
+                            <li class="li"><a class="des" href="{{ project_no_quotes }}">{{ project_no_quotes }}</a></li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            {% endif %}
+            <!-- Education -->
+            {% if education %}
+                <div class="education">
+                    <h3 class="main_title">Education</h3>
+                    {% for education_item in education %}
+                        <h4>{{ education_item }}</h4>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <!-- Work experience -->
+            {% if past_work %}
+                <div class="experience">
+                    <h3 class="main_title">Work Experience</h3>
+                    {% for i in range(past_work | length) %}
+                        <div>
+                            {% set work_experience_no_quotes = past_work[i].strip("'") %}
+                            {% set how_long_no_quotes = how_long[i].strip("'") %}
+                            {% set job_description_no_quotes = job_description[i].strip("'") %}
+                            <h4 class="pst_wrk">{{ work_experience_no_quotes }}</h4>
+                            <p>{{ how_long_no_quotes }}</p>
+                            <ul class="pst_wrk_list">
+                                <li class="li"><span>{{ job_description_no_quotes }}</span></li>
+                            </ul>
+                            <hr>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <aside class="sidebar">
+            <!--Photo-->
+                    {% if photo_data %}
+                        <div style="display: flex; justify-content: center;">
+                            <img src="data:image/jpeg;base64,{{ photo_data }}" alt=""  class="image"/>
+                        </div>
+                    {% endif %}
+            <!-- Contact -->
+            <div class="contact">
+                <h3 class="sidebar_title">Contacts</h3>
+                <div>
+                    <span>Number:</span>
+                    <a class="contact_link" href="tel:{{ phone_number }}">{{ phone_number }}</a>
+                </div>
+                <div>
+                    <span>Email:</span>
+                    <a class="contact_link" href="mailto:{{ email }}">{{ email }}</a>
+                </div>
+                </div>
+            <!-- Tech skills -->
+            {% if tech_skills %}
+                <div class="tech">
+                <h3 class="sidebar_title">Tech Skills</h3>
+                    <ul class="skills_list">
+                    {% for tech_skill in tech_skills %}
+                    {% set tech_skill_no_quotes = tech_skill.strip("'") %}
+                        <li class="skills_item"><span class="skills_item_text">{{ tech_skill_no_quotes }}</span></li>
+            {% endfor %}
+            </ul>
+            </div>
+            {% endif %}
+            <!-- Soft Skills -->
+            {% if soft_skills %}
+                <div class="soft">
+                <h3 class="sidebar_title">Soft Skills</h3>
+                <ul class="skills_list">
+                    {% for soft_skill in soft_skills %}
+                    {% set soft_skill_no_quotes = soft_skill.strip("'") %}
+                        <li class="skills_item"><span class="skills_item_text">{{ soft_skill_no_quotes }}</span></li>
+                {% endfor %}
+                </ul>
+                </div>
+                    {% endif %}
+            <!-- Languages -->
+            {% if lang and lang_level %}
+                <div class="lang">
+                <h3 class="sidebar_title">Languages</h3>
+                <ul class="skills_list">
+                    {% for i in range(lang | length) %}
+                        {% set lang_no_quotes = lang[i].strip("'") %}
+                        {% set lang_level_no_quotes = lang_level[i].strip("'") %}
+                        <li class="skills_item">
+                            <p><span class="skills_item_text">{{ lang_no_quotes }} - <span>{{ lang_level_no_quotes }}</span></span></p>
+                        </li>
+                    {% endfor %}
+                </ul>
+                </div>
+            {% endif %}
+        </aside>
+        </div>
+        <form action="/generate_pdf" method="post">
+        <p class="download-form">{{ form.submit() }}</p>
+        </form>
+    </body>
+</html>

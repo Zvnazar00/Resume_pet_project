@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background: url(./photo4.jpg)no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main_container{
+    display: flex;
+    width: 1200px;
+    background-color: #fff;
+    margin: 40px auto;
+}
+
+.main_context{
+    width: 750px;
+    padding:65px 90px;
+}
+
+.profession{
+    font-style: normal;
+    font-weight: bold;
+    color: #000;
+    margin: 0 0 20px 0;
+}
+
+.name {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 45px;
+    color: #000;
+    margin: 0 0 25px 0;
+}
+
+.description {
+    width: 500px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #595959;
+}
+
+.main_title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.projects_list, .pst_wrk_list {
+    padding: 0 0 0 18px;
+}
+
+.des {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0 0 0 5px;
+}
+
+.person, .projects, .education, .experience{
+    color: black;
+    margin: 0 0 40px 0;
+}
+
+.pst_wrk {
+    color: #FB6D3A;
+}
+
+.li{
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.sidebar{
+    background-color: rgb(6, 18, 39);
+    color: #fff;
+    width: 450px;
+    padding: 16px 20px;
+}
+
+.contact, .tech, .soft, .lang{
+    margin: 50px 0px 0px 40px;
+}
+
+.sidebar_title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.contact_link {
+    margin-left: 5px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #565E6A;
+}
+
+.skills_list {
+    padding-left: 18px;
+
+}
+
+.skills_item {
+    color: #FB6D3A;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.skills_item_text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+}
+.image {
+    width: 350px;
+    height: 400px;
+    object-fit: cover;
+}
+input[type="submit"] {
+    transition: .5s;
+    border: none;
+    border-radius: 3px;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #000000;
+}
+input[type=submit]:hover {
+    background-color: #FB6D3A;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #ffffff;
+}
+.download-form {
+    display: flex;
+    justify-content: center;
+}
+
